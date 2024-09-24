@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/css/style.css">
+<h1 class="title">Mi Carrito</h1>
+
+<div class="cartContainer">
+    {{#if cart.products.length}}
+        {{#each cart.products}}
+        <div class="productDetails">
+            <img src="{{this.product.thumbnails}}" alt="imagen">
+            <p>{{this.product.title}}</p>
+            <p>{{this.product.description}}</p>
+            <p>$ {{this.product.price}}</p>
+            <p>Cantidad: {{this.quantity}}</p>
+        </div>
+        {{/each}}
+    {{else}}
+        <p>Tu carrito está vacío.</p>
+    {{/if}}
+</div>
+
+<!-- Botón para proceder a pagar -->
+{{!-- <div class="checkout-button">
+    <a href="/checkout" class="button">Proceder a pagar</a>
+</div> --}}

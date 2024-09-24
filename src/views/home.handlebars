@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/main.js"></script>
+
+<h1 class="title"> 🔥Midland Shopping "CDM"🔥</h1>
+
+{{#if username}}
+    <div class="welcome-message">
+        Bienvenido, {{username}}!
+    </div>
+{{/if}}
+
+<div class="productsContainer">
+    {{#each productos}}
+    <div class="card">
+        <img src="{{this.thumbnails}}" alt="imagen" class="image">
+        <p>{{this.title}}</p>
+        <p>{{this.description}}</p>
+        <p>$ {{this.price}}</p>
+        <a href="/products/{{this._id}}" class="button">Ver Detalles</a>
+    </div>
+    {{/each}}
+</div>
+
+<!-- Botón para ir al carrito -->
+<div class="cart-button">
+    <a href="/carts/66c55c66b5969a064c52a69c" class="button">Ver mi carrito</a>
+</div>
+
+<!-- Paginación -->
+<div class="pagination">
+    {{#if prevPage}}
+        <a class="buttonPag" href="/products?page={{prevPage}}{{#if sort}}&sort={{sort}}{{/if}}">⬅️Página anterior</a>
+    {{/if}}
+    {{#if nextPage}}
+        <a class="buttonPag" href="/products?page={{nextPage}}{{#if sort}}&sort={{sort}}{{/if}}">Página siguiente➡️</a>
+    {{/if}}
+</div>
